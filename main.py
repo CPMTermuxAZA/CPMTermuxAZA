@@ -203,7 +203,7 @@ def delete_account(id_token):
         return False
 clear_screen()
 logo()
-correct_password = "1"
+correct_password = "TERMUXCPMAZA"
 print(
     Fore.RED+"MANAGER:"+Fore.BLUE+"\nTELEGRAM: "+Fore.CYAN+"@AZAMJON7777777"+Fore.MAGENTA+"\nINSTAGRAM: "+Fore.LIGHTMAGENTA_EX+"azam.chik7"
     )
