@@ -26,9 +26,7 @@ ip_response = requests.get("https://api64.ipify.org?format=json")
 ip = ip_response.json()["ip"]
 local_ip = socket.gethostbyname(socket.gethostname())
 local_ip = socket.gethostbyname(socket.gethostname())
-# IP bo'yicha joylashuvni aniqlash
-geo_response = requests.get(f"https://ipapi.co/{ip}/json/")
-geo_data = geo_response.json()
+# IP bo'yicha joylashuvni aniqlash)
 def print_colored_text(text, hex_color):
     # Hex rangni RGB ga aylantirish
     hex_color = hex_color.lstrip('#')
@@ -253,7 +251,6 @@ while True:
     print_colored_text(f" - Email: {Fore.RED+email}","#f79900")
     print_colored_text(f" - Password: {Fore.RED+password}","#f79900")
     print_colored_text(f" - Real IP adrress: {Fore.GREEN+get_real_ip()}","#f79900")
-    print_colored_text(f" - Country: {Fore.GREEN+geo_data.get('country_name', 'Unknown')}"+f", {Fore.GREEN+geo_data.get('city','Unknown')}", "#d18100")
     print_colored_text(f" - Balance: {balance} "+Fore.WHITE+"│"+f" {status}","#f79900")
     print_colored_text("╭─────────────────────────────────────────────────────────────╮", "#d18100")
     print_colored_text("│                        CPM SERVICES                         │","#cc7e00")
