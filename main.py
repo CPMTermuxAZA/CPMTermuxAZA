@@ -1,4 +1,13 @@
-import os, sys, time, random , json, requests,  itertools, pyfiglet, pwinput, socket
+import os
+import sys
+import time
+import random 
+import json
+import requests
+import itertools
+import pyfiglet
+import pwinput 
+import socket
 from colorama import Fore, Style, init
 from termcolor import colored
 from colorama import init
