@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>O'zbekistonim shaharlari</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+
+    header {
+      background: linear-gradient(90deg, #007bff, #00b894);
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: #00695c;
+    }
+
+    nav a {
+      color: white;
+      padding: 14px 20px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      background-color: #004d40;
+    }
+
+    .slider {
+      position: relative;
+      width: 100%;
+      max-height: 500px;
+      overflow: hidden;
+    }
+
+    .slides img {
+      width: 100%;
+      display: none;
+    }
+
+    .active {
+      display: block;
+      animation: fade 2s;
+    }
+
+    @keyframes fade {
+      from {opacity: 0.5;}
+      to {opacity: 1;}
+    }
+
+    .content {
+      padding: 30px;
+      text-align: center;
+    }
+
+    .cities {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .city-card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      transition: 0.3s;
+    }
+
+    .city-card:hover {
+      transform: scale(1.05);
+    }
+
+    .city-card img {
+      width: 100%;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+    }
+
+    .city-card h3 {
+      color: #00695c;
+    }
+
+    footer {
+      background-color: #004d40;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>O‘ZBEKISTONIM SHAHARLARI</h1>
+    <p>Go‘zal diyorimning eng mashhur shaharlariga sayohat</p>
+  </header>
+
+  <nav>
+    <a href="#">Bosh sahifa</a>
+    <a href="#shaharlar">Shaharlar</a>
+    <a href="#aloqa">Aloqa</a>
+  </nav>
+
+  <div class="slider">
+    <div class="slides">
+      <img src="images/tashkent.jpg" class="active" alt="Toshkent">
+      <img src="images/samarkand.jpg" alt="Samarqand">
+      <img src="images/bukhara.jpg" alt="Buxoro">
+      <img src="images/khiva.jpg" alt="Xiva">
+    </div>
+  </div>
+
+  <div class="content" id="shaharlar">
+    <h2>O‘zbekistonning go‘zal shaharlariga nazar</h2>
+    <div class="cities">
+      <div class="city-card">
+        <img src="images/tashkent.jpg" alt="Toshkent">
+        <h3>Toshkent</h3>
+        <p>O‘zbekiston poytaxti, zamonaviy binolar va tarixiy joylar uyg‘unlashgan shahar.</p>
+      </div>
+
+      <div class="city-card">
+        <img src="images/samarkand.jpg" alt="Samarqand">
+        <h3>Samarqand</h3>
+        <p>Buyuk Amir Temur davridan qolgan me’moriy yodgorliklari bilan mashhur shahar.</p>
+      </div>
+
+      <div class="city-card">
+        <img src="images/bukhara.jpg" alt="Buxoro">
+        <h3>Buxoro</h3>
+        <p>Islom madaniyati markazi, qadimiy madrasa va masjidlari bilan tanilgan.</p>
+      </div>
+
+      <div class="city-card">
+        <img src="images/khiva.jpg" alt="Xiva">
+        <h3>Xiva</h3>
+        <p>Ichon-Qal’asi bilan jahon merosi ro‘yxatiga kiritilgan qadimiy shahar.</p>
+      </div>
+    </div>
+  </div>
+
+  <footer id="aloqa">
+    <p>© 2025 O‘zbekiston sayti | Muallif: Iroda</p>
+    <p>Email: info@uzbshahar.uz</p>
+  </footer>
+
+  <script>
+    let index = 0;
+    const slides = document.querySelectorAll('.slides img');
+
+    function showSlide() {
+      slides.forEach(slide => slide.classList.remove('active'));
+      slides[index].classList.add('active');
+      index = (index + 1) % slides.length;
+    }
+
+    setInterval(showSlide, 3000);
+  </script>
+
+</body>
+</html>
